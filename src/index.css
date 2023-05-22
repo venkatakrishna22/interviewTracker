@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.btn btn-primary{
+  text-align: center;
+  margin-left: 20%;
+}
+#card{
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 30%;
+}
+form{
+  display: inline-block;
+}
+#button1{
+  float: left;
+}
+#button2{
+  float: right;
+}
