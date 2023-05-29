@@ -33,6 +33,8 @@ app.post("/add", (req, res) => {
     let status= req.body.status
     let date=req.body.date
     let interviewedBy = req.body.interviewedBy
+    let shiftb=req.body.shiftb
+    let backToOffice=req.body.backToOffice
     let comments=req.body.comments
 
   db.collection("details").findOne(
@@ -54,6 +56,8 @@ app.post("/add", (req, res) => {
             status: status,
             date:date,
             interviewedBy:interviewedBy,
+            shiftb:shiftb,
+            backToOffice:backToOffice,
             comments:comments
         
           },
@@ -92,6 +96,8 @@ app.put("/update/:emailId",(req,res)=>{
     let status= req.body.status
     let date=req.body.date
     let interviewedBy = req.body.interviewedBy
+    let shiftb=req.body.shiftb
+    let backToOffice=req.body.backToOffice
     let comments=req.body.comments
   db.collection("details").findOneAndUpdate({emailId:emailId},{$set:{
     AccOrOutside :AccOrOutside,
@@ -102,6 +108,8 @@ app.put("/update/:emailId",(req,res)=>{
     status: status,
     date:date,
     interviewedBy:interviewedBy,
+    shiftb:shiftb,
+    backToOffice:backToOffice,
     comments:comments
    }},(err)=>{
     if(err){
