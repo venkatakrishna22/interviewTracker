@@ -15,6 +15,9 @@ function Navbar(){
       <li className="nav-item">
         <a className="nav-link" href="/">Candidate Details</a>
       </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/piechart">Piechart</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -14,9 +14,11 @@ const Update = () => {
   const [interviewedBy, setInterviewedBy] = useState("");
   const [AccOrOutside, setAccOrOutside] = useState("");
   const [comments, setComments] = useState("");
+  const [shiftb, setShiftb] = useState("");
+  const [backToOffice, setBackToOffice] = useState("");
   useEffect(()=>{
     getDetails()
-  })
+  },[])
   const getDetails=async()=>{
     let result= await fetch('http://localhost:4000/details/'+emailId);
     result=await result.json();
@@ -29,6 +31,8 @@ const Update = () => {
    setDate(result[0].date)
    setInterviewedBy(result[0].interviewedBy)
    setAccOrOutside(result[0].AccOrOutside)
+   setShiftb(result[0].shiftb)
+   setBackToOffice(result[0].backToOffice)
    setComments(result[0].comments)
   }
   const history = useNavigate();
@@ -44,6 +48,8 @@ const Update = () => {
           date,
           interviewedBy,
           AccOrOutside,
+          shiftb,
+          backToOffice,
           comments,
         })
         .then((res) => {
@@ -132,21 +138,58 @@ const Update = () => {
                   value={date}
             onChange={(e) => setDate(e.target.value)}
                 />
-                 <label for="exampleFormControlInput1">Interviewed By:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Enter Name"
-                  required
-                  value={interviewedBy}
-            onChange={(e) => setInterviewedBy(e.target.value)}
-                />
+               <label for="exampleFormControlSelect1">Interviewed By:</label>
+                <select required value={interviewedBy}  onChange={(e) => setInterviewedBy(e.target.value)}  class="form-control" id="exampleFormControlSelect1">
+                <option value="" disabled selected>Select Interviewer</option>
+                  <option>Anandam, Ananth</option>
+                  <option>Shah, Kruti</option>
+                  <option>Srikakolapu, Sirisha</option>
+                  <option>Siripuram, Saikumar</option>
+                  <option>Gatta, Sireesha</option>
+                  <option>Tanikella, Prasanna</option>
+                  <option>Bisoyi, Rajkiran</option>
+                  <option>Karnala, Keerthi</option>
+                  <option>Gabu, Siva Ganesh</option>
+                  <option>Chowdhury, Indranil</option>
+                  <option>Yenugu, Vani</option>
+                  <option>Rajamanickam, Tamilselvan</option>
+                  <option>Gunupaneni, Ramesh</option>
+                  <option>Bose, Ronita</option>
+                  <option>Ghori, Tahauddin</option>
+                  <option>Joshi, Rohan</option>
+                  <option>KUMAR, SANJEEV</option>
+                  <option>Koiloth Ramath, Sarath</option>
+                  <option>Kolli Venkata, Rajasekhar Reddy</option>
+                  <option>Mandal, Soumi</option>
+                  <option>Maddala, Ram</option>
+                  <option>Kadapa, Leelavathi</option>
+                  <option>Kumar Mathur, Rahul</option>
+                  <option>Jha, Amber</option>
+                  <option>Vadada, Mahesh</option>
+                  <option>Peddiraju, Sai Krishnam Raju</option>
+                  <option>Ganesana, Chaitanya</option>
+                  <option>Anna Vijayakumar, Monisha</option>
+                  <option>Sharma, Rahul</option>
+                  <option>Battula, Mallikharjuna Rao</option>
+                  
+                </select>
                 <label for="exampleFormControlSelect1">Candidate Type:</label>
                 <select required  value={AccOrOutside} onChange={(e) => setAccOrOutside(e.target.value)} class="form-control" id="exampleFormControlSelect1">
                 <option value="" disabled selected>Select Type</option>
                   <option>Accenture Employee</option>
                   <option>Recruiting Candidate</option>
+                </select>
+                <label for="exampleFormControlSelect1">Shift B:</label>
+                <select required  value={shiftb} onChange={(e) => setShiftb(e.target.value)} class="form-control" id="exampleFormControlSelect1">
+                <option value="" disabled selected>Select Type</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+                <label for="exampleFormControlSelect1">Back to office:</label>
+                <select required  value={backToOffice} onChange={(e) => setBackToOffice(e.target.value)} class="form-control" id="exampleFormControlSelect1">
+                <option value="" disabled selected>Select Type</option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </select>
                 <label for="exampleFormControlTextarea1">
                   Comments:

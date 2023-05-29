@@ -29,3 +29,40 @@ form{
 #button2{
   float: right;
 }
+#exampleFormControlSelect1{
+  margin-left: 2%;
+}
+#query{
+  margin-left: 2%;
+}
+#name{
+  margin-left: 4%;
+
+}
+#Date123{
+  margin-left: 2%;
+}
+#piechart{
+  display: flex;
+  justify-content: left;
+  margin-left: 15%;
+}
+#startdate{
+  margin-left: 2%;
+}
+.status-selected{
+  background-color: green;
+}
+table{
+  border: 10%;
+}
+#resulttable{
+  width:30%;
+  height:50%;
+  margin-left: 100px ;
+  border: 2px solid black;
+}
+#file{
+  margin-left: 10%;
+  margin-right: 60%;
+}
